@@ -33,7 +33,7 @@ func handleConn(conn net.Conn, delay time.Duration) {
 	buf := bufio.NewReader(conn)
 	for {
 		// log.Print("reading from connection")
-		data, err := buf.ReadString('\n')
+		_, err := buf.ReadString('\n')
 		// log.Printf("read from connection: %s", string(data))
 		if err != nil {
 			log.Printf("error with reading from connection: %s", err)
